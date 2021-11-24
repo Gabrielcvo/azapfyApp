@@ -3,11 +3,7 @@ import "./card.scss";
 import { api } from "../../services/api/api";
 import { useCallback, useEffect, useState } from "react";
 import { Modal } from "../Modal/Modal";
-
-export type Hero = {
-  name: string;
-  images: { sm: string };
-};
+import { Hero } from "../types/types";
 
 export function Card() {
   const [openModal, setOpenModal] = useState(false);
@@ -22,7 +18,7 @@ export function Card() {
 
   useEffect(() => {
     loadHero();
-  }, []);
+  }, [loadHero]);
 
   return (
     <div className="mainContent">
@@ -34,8 +30,8 @@ export function Card() {
           }}
           className="card"
         >
+          <img className="card-image" src={hero.images.sm} alt={hero.name} />
           <h1 className="card-title">{hero.name}</h1>
-          <img src={hero.images.sm} alt={hero.name} />
         </div>
       ))}
 

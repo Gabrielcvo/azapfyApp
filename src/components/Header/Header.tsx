@@ -1,7 +1,5 @@
 import "./header.scss";
 
-/* import Search from '@material-ui/icons'; */
-
 export function Header() {
   return (
     <div className="home">
