@@ -90,7 +90,14 @@
 
   @media (max-width: 450px) {
     width: 200px;
+    height: 280px;
     margin: 0;
+  }
+}
+
+.ocupation {
+  @media (max-width: 450px) {
+    display: none;
   }
 }
 
