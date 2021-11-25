@@ -9,27 +9,37 @@
   overflow-y: hidden;
 }
 
-.modalBackground {
+.modalContent {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
   width: 100vw;
   height: 100vh;
-  background-color: white;
-  display: flex;
-}
-
-.modalContainer {
-  width: 100%;
-  height: 100%;
   background-color: white;
   padding: 25px;
   -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-}
+  overflow-y: hidden;
+  flex: 1;
+  position: static;
 
-.modalContent {
-  display: flex;
-  justify-content: space-between;
-  margin-right: 20px;
+  @media (max-width: 450px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  @media (max-width: 390px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 20px;
+  }
 }
 
 .modalHeader {
@@ -75,8 +85,13 @@
 
 .modalHeroImage {
   width: 320px;
-  height: 400px;
+  height: 480px;
   border-radius: 5px;
+
+  @media (max-width: 450px) {
+    width: 200px;
+    margin: 0;
+  }
 }
 
 .hero-information {
@@ -91,11 +106,37 @@
 
 .modal-card {
   background: #fff;
-  border-radius: 2px;
+  border-radius: 5px;
   height: 300px;
   width: 200px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  @media (max-width: 450px) {
+    margin-top: 20px;
+    height: 260px;
+    margin-bottom: 200px;
+  }
+  @media (max-width: 390px) {
+    margin-top: 10px;
+    height: 260px;
+    margin-bottom: 60px;
+  }
+}
+
+.modal-card1,
+.modal-card2 {
+  background: #fff;
+  border-radius: 5px;
+  height: 300px;
+  width: 200px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  @media (max-width: 450px) {
+    display: none;
+  }
+  @media (max-width: 390px) {
+    display: none;
+  }
 }
 
 .informationTable {
@@ -108,13 +149,6 @@
   align-items: center;
 }
 
-.modalCardWrapper {
-  display: flex;
-  flex: 1;
-  justify-content: space-evenly;
-  background-color: white;
-}
-
 .imgWrapper {
-  height: 100vh;
+  margin-bottom: 10px;
 }
