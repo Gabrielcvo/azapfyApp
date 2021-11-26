@@ -1,21 +1,19 @@
-import { Hero } from "../types/types";
-
-import CloseIcon from "../../assets/images/window-close-regular.svg";
+import { useHeros } from "../../hooks/useHeros";
 
 import "./modal.scss";
 
 interface ModalProps {
-  data: Hero | undefined;
   closeModal: () => void;
 }
 
-export function Modal({ data, closeModal }: ModalProps) {
+export function Modal({ closeModal }: ModalProps) {
+  const { currentHero } = useHeros();
   return (
     <div className="modalOverlay">
       <header className="modalHeader">
         <div className="headerWrapper">
           <div className="headerTitle">
-            <h1 className="title">{data?.name} - Dossier</h1>
+            <h1 className="title">{currentHero?.name} - Dossier</h1>
           </div>
           <button className="closeModal" onClick={closeModal}>
             <img
@@ -31,14 +29,14 @@ export function Modal({ data, closeModal }: ModalProps) {
         <div className="imgWrapper">
           <img
             className="modalHeroImage"
-            src={data?.images.md}
-            alt={data?.name}
+            src={currentHero?.images.md}
+            alt={currentHero?.name}
           />
           <div className="ocupationCard">
             <div className="modalTitleWrapper">
               <h2 className="modalCardTitle">Ocupation</h2>
             </div>
-            <div className="ocupation">{data?.work.occupation}</div>
+            <div className="ocupation">{currentHero?.work.occupation}</div>
           </div>
         </div>
 
@@ -48,22 +46,22 @@ export function Modal({ data, closeModal }: ModalProps) {
           </div>
           <ul className="informationTable">
             <li className="hero-information">
-              Inteligence: {data?.powerstats.intelligence}
+              Inteligence: {currentHero?.powerstats.intelligence}
             </li>
             <li className="hero-information">
-              Strenght: {data?.powerstats.strength}
+              Strenght: {currentHero?.powerstats.strength}
             </li>
             <li className="hero-information">
-              Speed: {data?.powerstats.speed}
+              Speed: {currentHero?.powerstats.speed}
             </li>
             <li className="hero-information">
-              Durability: {data?.powerstats.durability}
+              Durability: {currentHero?.powerstats.durability}
             </li>
             <li className="hero-information">
-              Power: {data?.powerstats.power}
+              Power: {currentHero?.powerstats.power}
             </li>
             <li className="hero-information">
-              Combat: {data?.powerstats.combat}
+              Combat: {currentHero?.powerstats.combat}
             </li>
           </ul>
         </div>
@@ -74,20 +72,22 @@ export function Modal({ data, closeModal }: ModalProps) {
           </div>
           <ul className="informationTable">
             <li className="hero-information">
-              Gender: {data?.appearance.gender}
-            </li>
-            <li className="hero-information">Race: {data?.appearance.race}</li>
-            <li className="hero-information">
-              Height: {data?.appearance.height[1]}
+              Gender: {currentHero?.appearance.gender}
             </li>
             <li className="hero-information">
-              Weight: {data?.appearance.weight[1]}
+              Race: {currentHero?.appearance.race}
             </li>
             <li className="hero-information">
-              Eye Color: {data?.appearance.eyeColor}
+              Height: {currentHero?.appearance.height[1]}
             </li>
             <li className="hero-information">
-              Hair Color: {data?.appearance.hairColor}
+              Weight: {currentHero?.appearance.weight[1]}
+            </li>
+            <li className="hero-information">
+              Eye Color: {currentHero?.appearance.eyeColor}
+            </li>
+            <li className="hero-information">
+              Hair Color: {currentHero?.appearance.hairColor}
             </li>
           </ul>
         </div>
@@ -98,22 +98,22 @@ export function Modal({ data, closeModal }: ModalProps) {
           </div>
           <ul className="informationTable">
             <li className="hero-information">
-              Full Name: {data?.biography.fullName}
+              Full Name: {currentHero?.biography.fullName}
             </li>
             <li className="hero-information">
-              Alter Egos: {data?.biography.alterEgos}
+              Alter Egos: {currentHero?.biography.alterEgos}
             </li>
             <li className="hero-information">
-              Aliases: {data?.biography.aliases[0]}
+              Aliases: {currentHero?.biography.aliases[0]}
             </li>
             <li className="hero-information">
-              Place of birth: {data?.biography.placeOfBirth}
+              Place of birth: {currentHero?.biography.placeOfBirth}
             </li>
             <li className="hero-information">
-              Publisher: {data?.biography.publisher}
+              Publisher: {currentHero?.biography.publisher}
             </li>
             <li className="hero-information">
-              Alignment: {data?.biography.alignment}
+              Alignment: {currentHero?.biography.alignment}
             </li>
           </ul>
         </div>
