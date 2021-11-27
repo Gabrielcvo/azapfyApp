@@ -1,7 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
 
 import { useHeros } from "../../hooks/useHeros";
-import { Hero } from "../../types/types";
 
 type SearchBarProps = {
   placeholder: string;
@@ -9,7 +8,6 @@ type SearchBarProps = {
 
 function SearchBar({ placeholder }: SearchBarProps) {
   const { fetchedHeros, handleFilterHeros } = useHeros();
-  const [filteredData, setFilteredData] = useState<Hero[]>();
   const [searchHero, setSearchHero] = useState("");
 
   const handleFilter = (event: ChangeEvent<HTMLInputElement>) => {
@@ -24,11 +22,6 @@ function SearchBar({ placeholder }: SearchBarProps) {
     } else {
       handleFilterHeros(newFilter ? newFilter : []);
     }
-  };
-
-  const clearInput = () => {
-    setFilteredData([]);
-    setSearchHero("");
   };
 
   return (

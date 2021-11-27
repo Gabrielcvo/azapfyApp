@@ -18,6 +18,7 @@ export function Card() {
             selectCurrentHero(idx);
           }}
           className="card"
+          key={hero.id}
         >
           <img className="card-image" src={hero.images.sm} alt={hero.name} />
           <h1 className="card-title">{hero.name}</h1>
