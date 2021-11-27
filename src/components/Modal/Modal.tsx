@@ -1,5 +1,7 @@
 import { useHeros } from "../../hooks/useHeros";
 
+import closeIcon from "../../assets/images/close-icon.svg";
+
 import "./modal.scss";
 
 interface ModalProps {
@@ -16,11 +18,7 @@ export function Modal({ closeModal }: ModalProps) {
             <h1 className="title">{currentHero?.name} - Dossier</h1>
           </div>
           <button className="closeModal" onClick={closeModal}>
-            <img
-              className="closeIcon"
-              src="https://cdn-icons.flaticon.com/png/512/3161/premium/3161830.png?token=exp=1637879470~hmac=f9d1e4e57bed21d13c803904b3c4f1d6"
-              alt=""
-            />
+            <img className="closeIcon" src={closeIcon} alt="close icon" />
           </button>
         </div>
       </header>

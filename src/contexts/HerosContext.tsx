@@ -17,7 +17,9 @@ type HeroContextProviderProps = {
 type HeroContextType = {
   heros: Hero[] | undefined;
   currentHero: Hero | undefined;
+  fetchedHeros: Hero[] | undefined;
   selectCurrentHero: (idx: number) => void;
+  handleFilterHeros: (filteredHeros: Hero[] | undefined) => void;
 };
 
 export const HerosContext = createContext({} as HeroContextType);
@@ -25,6 +27,11 @@ export const HerosContext = createContext({} as HeroContextType);
 export function HerosContextProvider(props: HeroContextProviderProps) {
   const [heros, setHeros] = useState<Hero[]>();
   const [currentHero, setCurrentHero] = useState<Hero>();
+  const [fetchedHeros, setFetchedHeros] = useState<Hero[]>();
+
+  function handleFilterHeros(filteredHeros: Hero[] | undefined) {
+    setHeros(filteredHeros ? filteredHeros : fetchedHeros);
+  }
 
   function selectCurrentHero(idx: number) {
     setCurrentHero(heros && heros[idx]);
@@ -33,6 +40,7 @@ export function HerosContextProvider(props: HeroContextProviderProps) {
   const loadHero = useCallback(async () => {
     const { data } = await api.get(`/ps/metahumans`);
 
+    setFetchedHeros(data);
     setHeros(data);
   }, []);
 
@@ -41,7 +49,15 @@ export function HerosContextProvider(props: HeroContextProviderProps) {
   }, [loadHero]);
 
   return (
-    <HerosContext.Provider value={{ heros, currentHero, selectCurrentHero }}>
+    <HerosContext.Provider
+      value={{
+        heros,
+        currentHero,
+        fetchedHeros,
+        selectCurrentHero,
+        handleFilterHeros,
+      }}
+    >
       {props.children}
     </HerosContext.Provider>
   );
