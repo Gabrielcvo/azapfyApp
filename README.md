@@ -23,6 +23,8 @@
 
 O repositório consume uma API já pronta, disponível em: http://homologacao3.azapfy.com.br/api/ps/metahumans
 
+Tentei fazer o deploy da aplicação em um serviço gratuito de hospedagem, porém não consegui consumir a API dado que, o protocolo da aplicação frontend hospedada é HTTPS e o da API é HTTP, então pelo protocolo de segurança HTTP, aplicações em HTTPS não podem fazer requisições para protocolos HTTP.
+
 </br>
 </br>
 
