@@ -62,7 +62,9 @@ Esse projeto só contem uma parte frontend.
 
 <img align="center" alt="VisualStudioCode" height="25" width="35" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/visualstudio/visualstudio-plain.svg" style="max-width:100%;"> [VSCode](https://code.visualstudio.com/)</img>
 
-</br>
+### Adicione a variável JAVA_HOME da mesma maneira que adicionou a ANDROID_HOME, porem com a "Variable Value" sendo "C:\Program Files\Android\Android Studio\jre", path padrão.
+
+
 
 ### :computer: Iniciando o Frontend (Web):
 
