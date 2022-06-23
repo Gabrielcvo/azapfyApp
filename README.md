@@ -15,13 +15,15 @@
 
 ## :bulb: Sobre o Projeto:
 
-:shopping_cart: Mario-Game - É um jogo simples em que você corre pelo cenário e salta os obstáculos.
+:shopping_cart: HeroPedia - É um website onde pode-se acessar as informações de cada herói separadamente.
+
+:briefcase: O projeto foi desenvolvido com o intuíto principal de ser o teste prático para a vaga de Desenvolvedor Fronted Estágiario da Azapfy.
 
 #### :mag_right: Informações extras:
 
-Este projeto foi desenvolvido com o intuito inicial do projeto foi aperfoiçoar um pouco mais minhas habilidades em React, Typescript e o SASS.
+O repositório consume uma API já pronta, disponível em: http://homologacao3.azapfy.com.br/api/ps/metahumans
 
-A ideia inicial veio do canal no youtube chamado Manual do Dev, onde inicialmente o jogo era construido em Javascript puro, porém tive a vontade de realiza-lo em React e fazer algumas melhorias. Esta é uma das primeiras versões deste jogo, ainda pretendo o melhorar bastante incluindo novas dificuldades, skins para o Mário e para o cenário. 
+Tentei fazer o deploy da aplicação em um serviço gratuito de hospedagem, porém não consegui consumir a API dado que, o protocolo da aplicação frontend hospedada é HTTPS e o da API é HTTP, então pelo protocolo de segurança HTTP, aplicações em HTTPS não podem fazer requisições para protocolos HTTP.
 
 </br>
 </br>
@@ -30,16 +32,16 @@ A ideia inicial veio do canal no youtube chamado Manual do Dev, onde inicialment
 
 ### :desktop_computer: Desktop Layout:
 
-#### Mario-Game
+#### HeroPedia
 
- <img alt="" src="https://res.cloudinary.com/dds7bsyhr/image/upload/v1655934799/Initial_ux01s9.png">
+ <img alt="" src="https://res.cloudinary.com/dds7bsyhr/image/upload/v1638058489/App_wnzzxa.png">
  
- #### :gear: Jogo
-  <img alt="" src="https://res.cloudinary.com/dds7bsyhr/image/upload/v1655934798/Game_meskex.png">
+ #### :gear: Hero Dossier
+  <img alt="" src="https://res.cloudinary.com/dds7bsyhr/image/upload/v1638058503/App1_jp5wye.png">
 
- #### :gear: Game Over
+ #### :gear: Funcionalidades Gerais
 
- <img alt="" src="https://res.cloudinary.com/dds7bsyhr/image/upload/v1655934952/gameOver_e8lyjx.png">
+ <img alt="" src="https://res.cloudinary.com/dds7bsyhr/image/upload/v1638058542/WhatsApp-Video-2021-11-27-at-21.13.16_vneu8q.gif">
  
 </br>
 </br>
@@ -64,25 +66,19 @@ Esse projeto só contem uma parte frontend.
 ### :computer: Iniciando o Frontend (Web):
 
 ```bash
-
 # Clone esse Repositório
-$ git clone https://github.com/Gabrielcvo/Mario-Game.git
-
+$ git clone https://github.com/Gabrielcvo/azapfyApp
 # Entre na pasta do projeto pelo Terminal
-$ cd Mario-Game
-
+$ cd azapfyApp
 # Instale as dependências
 $ npm install
  ou
 $ yarn install
-
 # Execute a aplicação com esse comando
 $ npm start
  ou
 $ yarn start
-
 # A aplicação irá iniciar na porta:3000
-
 ```
 
 ---
@@ -94,6 +90,7 @@ As ferramentas a seguir foram utilizadas no desenvolvimento da aplicação:
 
 ### **Frontend** ([ReactJs](https://reactjs.org/) + [TypeScript](https://www.typescriptlang.org/))
 
+- **[axios](https://www.npmjs.com/package/axios)**
 - **[react-router-dom](https://www.npmjs.com/package/react-router-dom)**
 
 
@@ -104,5 +101,5 @@ As ferramentas a seguir foram utilizadas no desenvolvimento da aplicação:
 
 <a href="https://github.com/Gabrielcvo">
  <br />
- 	<b>Gabriel Santiago</b></a> <a href="www.linkedin.com/in/gabrielsantiagosilva" title="Gabrielcvo"></a>
+ 	<b>Gabriel Santiago</b></a> <a href="https://github.com/Gabrielcvo" title="Gabrielcvo"></a>
  <br />
